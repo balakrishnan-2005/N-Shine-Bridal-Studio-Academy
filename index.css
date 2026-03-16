@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "DM Sans", sans-serif;
+
+  --color-plum-dark: #3D0A20;
+  --color-plum: #6B1A3A;
+  --color-pink: #E91E8C;
+  --color-pink-light: #FF6BB5;
+  --color-gold: #C9A84C;
+  --color-gold-light: #F0D080;
+  --color-cream: #FFF5F0;
+
+  @keyframes scroll {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes slow-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes bokeh {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, 50px); }
+    66% { transform: translate(-20px, 20px); }
+  }
+}
+
+/* Noise Texture */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9997;
+}
+
+/* Bokeh Orbs */
+.bokeh-orb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  animation: bokeh 15s ease-in-out infinite;
+}
+
+.bokeh-1 { background: var(--color-pink); top: 10%; left: 5%; }
+.bokeh-2 { background: var(--color-gold); top: 60%; right: 5%; animation-delay: -5s; }
+.bokeh-3 { background: var(--color-plum); bottom: 10%; left: 20%; animation-delay: -10s; }
+
+/* Hero Gradient Mesh */
+#hero {
+  background: linear-gradient(45deg, var(--color-plum-dark), var(--color-plum), #1a0510);
+  background-size: 400% 400%;
+  animation: mesh-gradient 15s ease infinite;
+}
+
+@keyframes mesh-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .shimmer-text {
+    background: linear-gradient(90deg, var(--color-gold), var(--color-pink), var(--color-plum), var(--color-gold));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 5s linear infinite;
+  }
+
+  .animate-scroll {
+    animation: scroll 2s infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s forwards;
+  }
+
+  .animate-slow-spin {
+    animation: slow-spin 20s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  cursor: none;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Navigation Links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--color-pink);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Liquid Button */
+.btn-liquid {
+  position: relative;
+  transition: all 0.5s;
+}
+
+.btn-liquid .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: var(--color-plum);
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  transition: 0.5s;
+  border-radius: 40%;
+  z-index: -1;
+  transform: translateY(100%) rotate(0deg);
+}
+
+.btn-liquid:hover .liquid {
+  transform: translateY(0) rotate(360deg);
+}
+
+/* Service Cards 3D Effect */
+.service-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
+  transform-style: preserve-3d;
+}
+
+.service-card:hover .card-inner {
+  box-shadow: 0 20px 40px rgba(233, 30, 140, 0.2), 0 0 20px rgba(201, 168, 76, 0.1);
+  border-color: var(--color-pink);
+}
+
+/* Masonry Gallery */
+.masonry-gallery {
+  columns: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-gallery { columns: 2; }
+}
+
+@media (min-width: 1024px) {
+  .masonry-gallery { columns: 3; }
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(61, 10, 32, 0.8), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Testimonials */
+.testimonial-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+  pointer-events: none;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animation="fade-right"] { transform: translateX(-50px); opacity: 0; }
+[data-animation="fade-left"] { transform: translateX(50px); opacity: 0; }
+
+.reveal-on-scroll.active[data-animation="fade-right"],
+.reveal-on-scroll.active[data-animation="fade-left"] {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Diagonal Stripes */
+.diagonal-stripes {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 255, 255, 0.1) 20px,
+    rgba(255, 255, 255, 0.1) 40px
+  );
+  animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to { background-position: 500px 500px; }
+}
+
+/* Phone Icon Shake */
+.phone-icon {
+  animation: ring 3s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0%, 90%, 100% { transform: rotate(0); }
+  92% { transform: rotate(10deg); }
+  94% { transform: rotate(-10deg); }
+  96% { transform: rotate(10deg); }
+  98% { transform: rotate(-10deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-plum-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pink);
+}
