@@ -1,761 +1,628 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>N Shine Bridal Studio & Academy | Luxury Makeup & Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-cream text-plum-dark overflow-x-hidden">
+    <!-- Atmosphere -->
+    <div class="noise-overlay"></div>
+    <div class="bokeh-orb bokeh-1"></div>
+    <div class="bokeh-orb bokeh-2"></div>
+    <div class="bokeh-orb bokeh-3"></div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>N Shine Bridal Studio & Academy | Luxury Makeup & Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-    rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-C_8yZTIo.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-_6zo5ZD5.css">
-</head>
+    <!-- Custom Cursor -->
+    <div id="cursor" class="fixed top-0 left-0 w-4 h-4 bg-pink rounded-full pointer-events-none z-[9999] transition-transform duration-100 ease-out mix-blend-difference"></div>
+    <div id="cursor-ring" class="fixed top-0 left-0 w-10 h-10 border border-pink rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out"></div>
 
-<body class="bg-cream text-plum-dark overflow-x-hidden">
-  <!-- Atmosphere -->
-  <div class="noise-overlay"></div>
-  <div class="bokeh-orb bokeh-1"></div>
-  <div class="bokeh-orb bokeh-2"></div>
-  <div class="bokeh-orb bokeh-3"></div>
-
-  <!-- Custom Cursor -->
-  <div id="cursor"
-    class="fixed top-0 left-0 w-4 h-4 bg-pink rounded-full pointer-events-none z-[9999] transition-transform duration-100 ease-out mix-blend-difference">
-  </div>
-  <div id="cursor-ring"
-    class="fixed top-0 left-0 w-10 h-10 border border-pink rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out">
-  </div>
-
-  <!-- Preloader -->
-  <div id="preloader"
-    class="fixed inset-0 z-[10000] bg-black flex flex-col items-center justify-center transition-opacity duration-1000">
-    <div class="relative w-64 h-64 flex items-center justify-center">
-      <svg viewBox="0 0 100 100" class="w-full h-full">
-        <!-- Animated Logo Path -->
-        <path id="logo-path" d="M20,80 L20,20 L40,20 L40,80 L60,20 L80,20 L80,80" fill="none" stroke="#C9A84C"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <span class="text-gold text-4xl font-serif tracking-widest opacity-0 animate-fade-in"
-          style="animation-delay: 1.5s;">N SHINE</span>
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[10000] bg-black flex flex-col items-center justify-center transition-opacity duration-1000">
+      <div class="relative w-64 h-64 flex items-center justify-center">
+        <svg viewBox="0 0 100 100" class="w-full h-full">
+          <!-- Animated Logo Path -->
+          <path id="logo-path" d="M20,80 L20,20 L40,20 L40,80 L60,20 L80,20 L80,80" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-gold text-4xl font-serif tracking-widest opacity-0 animate-fade-in" style="animation-delay: 1.5s;">N SHINE</span>
+        </div>
+      </div>
+      <div class="w-48 h-1 bg-white/10 mt-8 rounded-full overflow-hidden">
+        <div id="progress-bar" class="h-full bg-gold w-0 transition-all duration-[2500ms] ease-linear"></div>
       </div>
     </div>
-    <div class="w-48 h-1 bg-white/10 mt-8 rounded-full overflow-hidden">
-      <div id="progress-bar" class="h-full bg-gold w-0 transition-all duration-[2500ms] ease-linear"></div>
+
+    <!-- Navigation -->
+    <header id="header" class="fixed top-0 left-0 w-full z-[9000] transition-all duration-500 py-6 px-8 md:px-16 flex items-center justify-between">
+      <a href="#" class="text-2xl font-serif text-white tracking-widest group">
+        <span class="group-hover:text-pink transition-colors duration-300">N SHINE</span>
+      </a>
+      
+      <nav class="hidden md:flex items-center space-x-12">
+        <a href="#about" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">About</a>
+        <a href="#services" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Services</a>
+        <a href="#academy" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Academy</a>
+        <a href="#shop" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Shop</a>
+        <a href="#gallery" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Gallery</a>
+        <a href="#contact" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Contact</a>
+      </nav>
+
+      <div id="menu-toggle" class="md:hidden w-8 h-8 flex flex-col justify-center space-y-2 cursor-pointer z-[9001]">
+        <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-plum-dark z-[8999] translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-8">
+      <a href="#about" class="mobile-nav-link text-white text-3xl font-serif opacity-0">About</a>
+      <a href="#services" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Services</a>
+      <a href="#academy" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Academy</a>
+      <a href="#shop" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Shop</a>
+      <a href="#gallery" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Gallery</a>
+      <a href="#contact" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Contact</a>
     </div>
-  </div>
 
-  <!-- Navigation -->
-  <header id="header"
-    class="fixed top-0 left-0 w-full z-[9000] transition-all duration-500 py-6 px-8 md:px-16 flex items-center justify-between">
-    <a href="#" class="text-2xl font-serif text-white tracking-widest group">
-      <span class="group-hover:text-pink transition-colors duration-300">N SHINE</span>
-    </a>
-
-    <nav class="hidden md:flex items-center space-x-12">
-      <a href="#about" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">About</a>
-      <a href="#services"
-        class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Services</a>
-      <a href="#academy"
-        class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Academy</a>
-      <a href="#shop" class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Shop</a>
-      <a href="#gallery"
-        class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Gallery</a>
-      <a href="#contact"
-        class="nav-link text-white text-sm uppercase tracking-widest font-medium relative py-2">Contact</a>
-    </nav>
-
-    <div id="menu-toggle" class="md:hidden w-8 h-8 flex flex-col justify-center space-y-2 cursor-pointer z-[9001]">
-      <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
-      <span class="w-full h-0.5 bg-white transition-all duration-300"></span>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu"
-    class="fixed inset-0 bg-plum-dark z-[8999] translate-x-full transition-transform duration-500 flex flex-col items-center justify-center space-y-8">
-    <a href="#about" class="mobile-nav-link text-white text-3xl font-serif opacity-0">About</a>
-    <a href="#services" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Services</a>
-    <a href="#academy" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Academy</a>
-    <a href="#shop" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Shop</a>
-    <a href="#gallery" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Gallery</a>
-    <a href="#contact" class="mobile-nav-link text-white text-3xl font-serif opacity-0">Contact</a>
-  </div>
-
-  <main>
-    <!-- Hero Section -->
-    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden bg-plum-dark">
-      <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-plum-dark/80 z-1"></div>
-
-      <div class="relative z-10 text-center px-4">
-        <h1 class="text-6xl md:text-9xl font-serif text-white mb-6 tracking-tighter shimmer-text">
-          N Shine
-        </h1>
-        <div class="h-12">
-          <p id="typewriter" class="text-xl md:text-2xl text-gold-light font-light tracking-[0.2em] uppercase"></p>
-        </div>
-        <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
-          <a href="#contact"
-            class="btn-liquid px-10 py-4 bg-pink text-white uppercase tracking-widest text-sm font-bold rounded-full overflow-hidden relative group">
-            <span class="relative z-10">Book Artistry</span>
-            <div class="liquid"></div>
-          </a>
-          <a href="#academy"
-            class="px-10 py-4 border border-gold text-gold uppercase tracking-widest text-sm font-bold rounded-full hover:bg-gold hover:text-plum-dark transition-all duration-500">
-            Join Academy
-          </a>
-        </div>
-      </div>
-
-      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
-          class="relative block w-[calc(100%+1.3px)] h-[60px] text-cream fill-current">
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
-          </path>
-        </svg>
-      </div>
-
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
-        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-          <div class="w-1 h-2 bg-white rounded-full animate-scroll"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 px-8 md:px-16 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-      <div class="reveal-on-scroll" data-animation="fade-right">
-        <div class="relative">
-          <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&w=800&q=80"
-            alt="N Shine Bridal Studio" class="rounded-2xl shadow-2xl relative z-10" referrerPolicy="no-referrer">
-          <div
-            class="absolute -top-6 -left-6 w-full h-full border-2 border-gold rounded-2xl -z-1 translate-x-4 translate-y-4">
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden bg-plum-dark">
+        <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-plum-dark/80 z-1"></div>
+        
+        <div class="relative z-10 text-center px-4">
+          <h1 class="text-6xl md:text-9xl font-serif text-white mb-6 tracking-tighter shimmer-text">
+            N Shine
+          </h1>
+          <div class="h-12">
+            <p id="typewriter" class="text-xl md:text-2xl text-gold-light font-light tracking-[0.2em] uppercase"></p>
           </div>
-        </div>
-      </div>
-      <div class="reveal-on-scroll" data-animation="fade-left">
-        <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Story</span>
-        <h2 class="text-4xl md:text-6xl font-serif mb-8 leading-tight">Where Beauty Meets <span
-            class="italic text-gold">Artistry</span></h2>
-        <p class="text-lg text-plum-dark/70 leading-relaxed mb-8">
-          N Shine Bridal Studio & Academy is Thanjavur's premier destination for luxury bridal transformations and
-          professional beauty education. Founded on the principle that every bride deserves to glow with confidence, we
-          blend traditional elegance with modern techniques.
-        </p>
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <h4 class="text-gold font-serif text-2xl mb-2">Expertise</h4>
-            <p class="text-sm text-plum-dark/60">Certified pro makeup artists with years of bridal experience.</p>
-          </div>
-          <div>
-            <h4 class="text-gold font-serif text-2xl mb-2">Innovation</h4>
-            <p class="text-sm text-plum-dark/60">Using the latest techniques and premium international brands.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-plum-dark text-white relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
-          class="relative block w-[calc(100%+1.3px)] h-[60px] text-cream fill-current">
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
-          </path>
-        </svg>
-      </div>
-      <div class="absolute inset-0 opacity-5 pointer-events-none">
-        <div class="diagonal-stripes"></div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-8 md:px-16 relative z-10">
-        <div class="text-center mb-20 reveal-on-scroll">
-          <span class="text-pink-light uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Offerings</span>
-          <h2 class="text-4xl md:text-6xl font-serif">Luxury Services</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Service Card 1 -->
-          <div class="service-card reveal-on-scroll" data-delay="0">
-            <div
-              class="card-inner p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl h-full flex flex-col items-center text-center group">
-              <div
-                class="w-20 h-20 bg-pink/20 rounded-full flex items-center justify-center mb-8 group-hover:rotate-[360deg] transition-transform duration-700">
-                <svg class="w-10 h-10 text-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M12 21l-8.228-9.904A5.25 5.25 0 1118 5.25V5.25a5.25 5.25 0 01-6 15.75z"></path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-serif mb-4">Bridal Makeup</h3>
-              <p class="text-white/60 mb-6">Exquisite, long-lasting bridal looks tailored to your unique features and
-                wedding theme.</p>
-              <ul
-                class="text-sm text-white/40 space-y-2 mb-8 text-left w-full hidden group-hover:block animate-fade-in">
-                <li>• HD & Airbrush Options</li>
-                <li>• Saree Draping</li>
-                <li>• Hair Styling</li>
-              </ul>
-              <button
-                class="mt-auto text-gold uppercase tracking-widest text-xs font-bold border-b border-gold/30 pb-1 hover:border-gold transition-all">Learn
-                More</button>
-            </div>
-          </div>
-
-          <!-- Service Card 2 -->
-          <div class="service-card reveal-on-scroll" data-delay="150">
-            <div
-              class="card-inner p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl h-full flex flex-col items-center text-center group">
-              <div
-                class="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mb-8 group-hover:rotate-[360deg] transition-transform duration-700">
-                <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.989-2.386l-.548-.547z">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-serif mb-4">Pro Artistry</h3>
-              <p class="text-white/60 mb-6">Editorial, fashion, and party makeup for any special occasion or photoshoot.
-              </p>
-              <ul
-                class="text-sm text-white/40 space-y-2 mb-8 text-left w-full hidden group-hover:block animate-fade-in">
-                <li>• Fashion Shoots</li>
-                <li>• Celebrity Styling</li>
-                <li>• Party Glam</li>
-              </ul>
-              <button
-                class="mt-auto text-gold uppercase tracking-widest text-xs font-bold border-b border-gold/30 pb-1 hover:border-gold transition-all">Learn
-                More</button>
-            </div>
-          </div>
-
-          <!-- Service Card 3 -->
-          <div class="service-card reveal-on-scroll" data-delay="300">
-            <div
-              class="card-inner p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl h-full flex flex-col items-center text-center group">
-              <div
-                class="w-20 h-20 bg-pink-light/20 rounded-full flex items-center justify-center mb-8 group-hover:rotate-[360deg] transition-transform duration-700">
-                <svg class="w-10 h-10 text-pink-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-serif mb-4">Beauty Academy</h3>
-              <p class="text-white/60 mb-6">Master the art of makeup with our professional certification courses.</p>
-              <ul
-                class="text-sm text-white/40 space-y-2 mb-8 text-left w-full hidden group-hover:block animate-fade-in">
-                <li>• Basic to Advanced</li>
-                <li>• Hands-on Training</li>
-                <li>• Business Mentorship</li>
-              </ul>
-              <button
-                class="mt-auto text-gold uppercase tracking-widest text-xs font-bold border-b border-gold/30 pb-1 hover:border-gold transition-all">Learn
-                More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
-          class="relative block w-[calc(100%+1.3px)] h-[60px] text-white fill-current">
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
-          </path>
-        </svg>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-        <div class="stat-item reveal-on-scroll">
-          <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="10">0</span>
-          <span class="text-xs uppercase tracking-widest text-plum-dark/50">Years Experience</span>
-        </div>
-        <div class="stat-item reveal-on-scroll" data-delay="100">
-          <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="500">0</span>
-          <span class="text-xs uppercase tracking-widest text-plum-dark/50">Happy Brides</span>
-        </div>
-        <div class="stat-item reveal-on-scroll" data-delay="200">
-          <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="200">0</span>
-          <span class="text-xs uppercase tracking-widest text-plum-dark/50">Students Graduated</span>
-        </div>
-        <div class="stat-item reveal-on-scroll" data-delay="300">
-          <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="15">0</span>
-          <span class="text-xs uppercase tracking-widest text-plum-dark/50">Awards Won</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Academy Section -->
-    <section id="academy" class="py-24 bg-cream relative overflow-hidden">
-      <div class="sparkles-container absolute inset-0 pointer-events-none"></div>
-      <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col md:flex-row gap-16 items-center">
-        <div class="md:w-1/2 reveal-on-scroll" data-animation="fade-right">
-          <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">N Shine Academy</span>
-          <h2 class="text-4xl md:text-6xl font-serif mb-8">Empowering Future <span
-              class="text-gold italic">Artists</span></h2>
-          <p class="text-lg text-plum-dark/70 mb-8">
-            Our academy offers a range of professional courses designed to take you from a beginner to a certified
-            makeup artist. Learn the secrets of the industry from experts.
-          </p>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0">
-                <span class="text-gold font-bold">01</span>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Professional Certification</h4>
-                <p class="text-sm text-plum-dark/60">Recognized certificates to kickstart your career.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0">
-                <span class="text-gold font-bold">02</span>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Live Model Practice</h4>
-                <p class="text-sm text-plum-dark/60">Gain confidence with real-world hands-on training.</p>
-              </div>
-            </div>
-          </div>
-          <button
-            class="mt-12 px-10 py-4 bg-plum text-white uppercase tracking-widest text-sm font-bold rounded-full hover:bg-pink transition-all duration-500 shadow-xl">Enquire
-            Now</button>
-        </div>
-        <div class="md:w-1/2 reveal-on-scroll" data-animation="fade-left">
-          <div class="relative">
-            <img
-              src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&h=800&q=80"
-              alt="Academy Training" class="rounded-full shadow-2xl border-8 border-white" referrerPolicy="no-referrer">
-            <div
-              class="absolute -bottom-10 -right-10 w-48 h-48 bg-gold rounded-full flex items-center justify-center text-center p-6 text-plum-dark font-serif text-xl animate-pulse">
-              New Batch Starting Soon!
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Shop Section -->
-    <section id="shop" class="py-24 bg-white relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-8 md:px-16">
-        <div class="text-center mb-20 reveal-on-scroll">
-          <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Collection</span>
-          <h2 class="text-4xl md:text-6xl font-serif">Exclusive Makeup <span class="text-gold italic">Products</span>
-          </h2>
-          <p class="mt-6 text-plum-dark/60 max-w-2xl mx-auto">Discover our curated selection of professional-grade
-            makeup kits and individual products used by our experts.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-12">
-          <!-- Product 1 -->
-          <div class="group reveal-on-scroll" data-delay="0">
-            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-6 shadow-lg">
-              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80"
-                alt="Professional Bridal Kit"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                referrerPolicy="no-referrer">
-              <div class="absolute top-4 right-4 bg-pink text-white text-xs font-bold px-4 py-2 rounded-full shadow-md">
-                Best Seller</div>
-            </div>
-            <h3 class="text-2xl font-serif mb-2">Professional Bridal Kit</h3>
-            <p class="text-sm text-plum-dark/50 mb-4">Complete set for professional bridal transformations.</p>
-            <div class="flex items-center justify-between">
-              <span class="text-xl font-bold text-plum">₹12,499</span>
-              <button
-                class="px-6 py-2 bg-plum-dark text-white rounded-full text-xs uppercase tracking-widest font-bold hover:bg-pink transition-colors">Add
-                to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 2 -->
-          <div class="group reveal-on-scroll" data-delay="150">
-            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-6 shadow-lg">
-              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"
-                alt="Luxury Eye Palette"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                referrerPolicy="no-referrer">
-            </div>
-            <h3 class="text-2xl font-serif mb-2">Luxury Eye Palette</h3>
-            <p class="text-sm text-plum-dark/50 mb-4">Highly pigmented 24-color professional eyeshadow palette.</p>
-            <div class="flex items-center justify-between">
-              <span class="text-xl font-bold text-plum">₹3,299</span>
-              <button
-                class="px-6 py-2 bg-plum-dark text-white rounded-full text-xs uppercase tracking-widest font-bold hover:bg-pink transition-colors">Add
-                to Cart</button>
-            </div>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="group reveal-on-scroll" data-delay="300">
-            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-6 shadow-lg">
-              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80"
-                alt="Pro Brush Set"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                referrerPolicy="no-referrer">
-            </div>
-            <h3 class="text-2xl font-serif mb-2">Pro Brush Set</h3>
-            <p class="text-sm text-plum-dark/50 mb-4">12-piece premium synthetic brush set with leather case.</p>
-            <div class="flex items-center justify-between">
-              <span class="text-xl font-bold text-plum">₹4,999</span>
-              <button
-                class="px-6 py-2 bg-plum-dark text-white rounded-full text-xs uppercase tracking-widest font-bold hover:bg-pink transition-colors">Add
-                to Cart</button>
-            </div>
+          <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
+            <a href="#contact" class="btn-liquid px-10 py-4 bg-pink text-white uppercase tracking-widest text-sm font-bold rounded-full overflow-hidden relative group">
+              <span class="relative z-10">Book Artistry</span>
+              <div class="liquid"></div>
+            </a>
+            <a href="#academy" class="px-10 py-4 border border-gold text-gold uppercase tracking-widest text-sm font-bold rounded-full hover:bg-gold hover:text-plum-dark transition-all duration-500">
+              Join Academy
+            </a>
           </div>
         </div>
 
-        <div class="mt-20 text-center">
-          <a href="#contact"
-            class="inline-block px-12 py-5 border-2 border-plum text-plum uppercase tracking-widest text-sm font-bold rounded-full hover:bg-plum hover:text-white transition-all duration-500">
-            View All Products
-          </a>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-cream fill-current">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          </svg>
         </div>
-      </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-24 px-8 md:px-16 bg-white">
-      <div class="text-center mb-20 reveal-on-scroll">
-        <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Portfolio</span>
-        <h2 class="text-4xl md:text-6xl font-serif">The Art of Transformation</h2>
-      </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
+          <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+            <div class="w-1 h-2 bg-white rounded-full animate-scroll"></div>
+          </div>
+        </div>
+      </section>
 
-      <div class="masonry-gallery">
-        <div class="gallery-item reveal-on-scroll" data-delay="0">
-          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"
-            alt="Bridal Makeup" referrerPolicy="no-referrer">
-          <div class="gallery-overlay">
-            <div class="text-left">
-              <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Luxury
-                Bridal</span>
-              <span class="text-white uppercase tracking-widest text-sm font-serif">Royal Glamour</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal-on-scroll" data-delay="100">
-          <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&w=600&q=80"
-            alt="Traditional Indian Bride" referrerPolicy="no-referrer">
-          <div class="gallery-overlay">
-            <div class="text-left">
-              <span
-                class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Traditional</span>
-              <span class="text-white uppercase tracking-widest text-sm font-serif">Heritage Glow</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal-on-scroll" data-delay="200">
-          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80"
-            alt="Professional Makeup Artistry" referrerPolicy="no-referrer">
-          <div class="gallery-overlay">
-            <div class="text-left">
-              <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Pro
-                Artistry</span>
-              <span class="text-white uppercase tracking-widest text-sm font-serif">Precision Tools</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal-on-scroll" data-delay="300">
-          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80"
-            alt="Eye Makeup Detail" referrerPolicy="no-referrer">
-          <div class="gallery-overlay">
-            <div class="text-left">
-              <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Detailing</span>
-              <span class="text-white uppercase tracking-widest text-sm font-serif">Ethereal Eyes</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal-on-scroll" data-delay="400">
-          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80"
-            alt="Wedding Jewelry and Makeup" referrerPolicy="no-referrer">
-          <div class="gallery-overlay">
-            <div class="text-left">
-              <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Reception</span>
-              <span class="text-white uppercase tracking-widest text-sm font-serif">Evening Radiance</span>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item reveal-on-scroll" data-delay="500">
-          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
-            alt="Salon Interior" referrerPolicy="no-referrer">
-          <div class="gallery-overlay">
-            <div class="text-left">
-              <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Our Studio</span>
-              <span class="text-white uppercase tracking-widest text-sm font-serif">Luxury Space</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Instagram Feed Section -->
-    <section class="py-12 bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto px-8 md:px-16">
-        <div class="flex items-center justify-between mb-8">
-          <h3 class="text-2xl font-serif">Follow @nshine_bridal</h3>
-          <a href="#"
-            class="text-pink font-bold text-sm uppercase tracking-widest border-b border-pink/20 hover:border-pink transition-all">View
-            Instagram</a>
-        </div>
-        <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
-          <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=400&h=400&q=80"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              referrerPolicy="no-referrer">
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&h=400&q=80"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              referrerPolicy="no-referrer">
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=400&h=400&q=80"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              referrerPolicy="no-referrer">
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&w=400&h=400&q=80"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              referrerPolicy="no-referrer">
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&h=400&q=80"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              referrerPolicy="no-referrer">
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-            <img
-              src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=400&h=400&q=80"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              referrerPolicy="no-referrer">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-24 bg-plum-dark text-white relative overflow-hidden">
-      <div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
-        <svg class="w-[800px] h-[800px] text-white animate-slow-spin" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 21l-8.228-9.904A5.25 5.25 0 1118 5.25V5.25a5.25 5.25 0 01-6 15.75z"></path>
-        </svg>
-      </div>
-
-      <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
-        <div class="testimonial-carousel relative h-80">
-          <div class="testimonial-slide active">
-            <div class="flex justify-center mb-6 space-x-1">
-              <span class="text-gold star">★</span><span class="text-gold star">★</span><span
-                class="text-gold star">★</span><span class="text-gold star">★</span><span
-                class="text-gold star">★</span>
-            </div>
-            <p class="text-2xl md:text-3xl font-serif italic mb-8">"N Shine made me feel like a queen on my wedding day.
-              The makeup was flawless and stayed perfect throughout the night. Highly recommended!"</p>
-            <h5 class="text-pink font-bold uppercase tracking-widest">Priya S.</h5>
-            <span class="text-xs text-white/40">Thanjavur Bride</span>
-          </div>
-          <div class="testimonial-slide">
-            <div class="flex justify-center mb-6 space-x-1">
-              <span class="text-gold star">★</span><span class="text-gold star">★</span><span
-                class="text-gold star">★</span><span class="text-gold star">★</span><span
-                class="text-gold star">★</span>
-            </div>
-            <p class="text-2xl md:text-3xl font-serif italic mb-8">"The academy training was life-changing. I learned so
-              much and now I'm starting my own freelance makeup business. Thank you N Shine!"</p>
-            <h5 class="text-pink font-bold uppercase tracking-widest">Ananya R.</h5>
-            <span class="text-xs text-white/40">Academy Graduate</span>
-          </div>
-        </div>
-        <div class="flex justify-center mt-8 space-x-4">
-          <button id="prev-testimonial"
-            class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">←</button>
-          <button id="next-testimonial"
-            class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">→</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-cream">
-      <div class="max-w-7xl mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-16">
+      <!-- About Section -->
+      <section id="about" class="py-24 px-8 md:px-16 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div class="reveal-on-scroll" data-animation="fade-right">
-          <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Get In Touch</span>
-          <h2 class="text-4xl md:text-6xl font-serif mb-8">Visit Our <span class="text-gold italic">Studio</span></h2>
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="N Shine Bridal Studio" class="rounded-2xl shadow-2xl relative z-10" referrerPolicy="no-referrer">
+            <div class="absolute -top-6 -left-6 w-full h-full border-2 border-gold rounded-2xl -z-1 translate-x-4 translate-y-4"></div>
+          </div>
+        </div>
+        <div class="reveal-on-scroll" data-animation="fade-left">
+          <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Story</span>
+          <h2 class="text-4xl md:text-6xl font-serif mb-8 leading-tight">Where Beauty Meets <span class="italic text-gold">Artistry</span></h2>
+          <p class="text-lg text-plum-dark/70 leading-relaxed mb-8">
+            N Shine Bridal Studio & Academy is Thanjavur's premier destination for luxury bridal transformations and professional beauty education. Founded on the principle that every bride deserves to glow with confidence, we blend traditional elegance with modern techniques.
+          </p>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-gold font-serif text-2xl mb-2">Expertise</h4>
+              <p class="text-sm text-plum-dark/60">Certified pro makeup artists with years of bridal experience.</p>
+            </div>
+            <div>
+              <h4 class="text-gold font-serif text-2xl mb-2">Innovation</h4>
+              <p class="text-sm text-plum-dark/60">Using the latest techniques and premium international brands.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div class="space-y-8">
-            <div class="flex items-start gap-6 group">
-              <div
-                class="w-12 h-12 bg-plum text-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Our Location</h4>
-                <p class="text-plum-dark/60">1st Floor, GMR Complex, Yagappa School Rd,<br>New Busstand, Thanjavur –
-                  613005</p>
+      <!-- Services Section -->
+      <section id="services" class="py-24 bg-plum-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-cream fill-current">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          </svg>
+        </div>
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+          <div class="diagonal-stripes"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-8 md:px-16 relative z-10">
+          <div class="text-center mb-20 reveal-on-scroll">
+            <span class="text-pink-light uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Offerings</span>
+            <h2 class="text-4xl md:text-6xl font-serif">Luxury Services</h2>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service Card 1 -->
+            <div class="service-card reveal-on-scroll" data-delay="0">
+              <div class="card-inner p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl h-full flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-pink/20 rounded-full flex items-center justify-center mb-8 group-hover:rotate-[360deg] transition-transform duration-700">
+                  <svg class="w-10 h-10 text-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21l-8.228-9.904A5.25 5.25 0 1118 5.25V5.25a5.25 5.25 0 01-6 15.75z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Bridal Makeup</h3>
+                <p class="text-white/60 mb-6">Exquisite, long-lasting bridal looks tailored to your unique features and wedding theme.</p>
+                <ul class="text-sm text-white/40 space-y-2 mb-8 text-left w-full hidden group-hover:block animate-fade-in">
+                  <li>• HD & Airbrush Options</li>
+                  <li>• Saree Draping</li>
+                  <li>• Hair Styling</li>
+                </ul>
+                <button class="mt-auto text-gold uppercase tracking-widest text-xs font-bold border-b border-gold/30 pb-1 hover:border-gold transition-all">Learn More</button>
               </div>
             </div>
 
-            <div class="flex items-start gap-6 group">
-              <div
-                class="w-12 h-12 bg-plum text-white rounded-full flex items-center justify-center shrink-0 phone-icon">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                  </path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Call Us</h4>
-                <p class="text-plum-dark/60">63748 05996</p>
+            <!-- Service Card 2 -->
+            <div class="service-card reveal-on-scroll" data-delay="150">
+              <div class="card-inner p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl h-full flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center mb-8 group-hover:rotate-[360deg] transition-transform duration-700">
+                  <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.989-2.386l-.548-.547z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Pro Artistry</h3>
+                <p class="text-white/60 mb-6">Editorial, fashion, and party makeup for any special occasion or photoshoot.</p>
+                <ul class="text-sm text-white/40 space-y-2 mb-8 text-left w-full hidden group-hover:block animate-fade-in">
+                  <li>• Fashion Shoots</li>
+                  <li>• Celebrity Styling</li>
+                  <li>• Party Glam</li>
+                </ul>
+                <button class="mt-auto text-gold uppercase tracking-widest text-xs font-bold border-b border-gold/30 pb-1 hover:border-gold transition-all">Learn More</button>
               </div>
             </div>
 
-            <div class="flex items-start gap-6 group">
-              <div class="w-12 h-12 bg-plum text-white rounded-full flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
+            <!-- Service Card 3 -->
+            <div class="service-card reveal-on-scroll" data-delay="300">
+              <div class="card-inner p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl h-full flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-pink-light/20 rounded-full flex items-center justify-center mb-8 group-hover:rotate-[360deg] transition-transform duration-700">
+                  <svg class="w-10 h-10 text-pink-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Beauty Academy</h3>
+                <p class="text-white/60 mb-6">Master the art of makeup with our professional certification courses.</p>
+                <ul class="text-sm text-white/40 space-y-2 mb-8 text-left w-full hidden group-hover:block animate-fade-in">
+                  <li>• Basic to Advanced</li>
+                  <li>• Hands-on Training</li>
+                  <li>• Business Mentorship</li>
+                </ul>
+                <button class="mt-auto text-gold uppercase tracking-widest text-xs font-bold border-b border-gold/30 pb-1 hover:border-gold transition-all">Learn More</button>
               </div>
-              <div>
-                <h4 class="font-bold mb-1">Working Hours</h4>
-                <p class="text-plum-dark/60">09:30 – 20:00 Daily</p>
-                <div class="flex items-center gap-2 mt-2">
-                  <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  <span class="text-xs font-bold text-green-600 uppercase">Open Now</span>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[60px] text-white fill-current">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+          <div class="stat-item reveal-on-scroll">
+            <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="10">0</span>
+            <span class="text-xs uppercase tracking-widest text-plum-dark/50">Years Experience</span>
+          </div>
+          <div class="stat-item reveal-on-scroll" data-delay="100">
+            <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="500">0</span>
+            <span class="text-xs uppercase tracking-widest text-plum-dark/50">Happy Brides</span>
+          </div>
+          <div class="stat-item reveal-on-scroll" data-delay="200">
+            <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="200">0</span>
+            <span class="text-xs uppercase tracking-widest text-plum-dark/50">Students Graduated</span>
+          </div>
+          <div class="stat-item reveal-on-scroll" data-delay="300">
+            <span class="text-5xl font-serif text-pink block mb-2 counter" data-target="15">0</span>
+            <span class="text-xs uppercase tracking-widest text-plum-dark/50">Awards Won</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Academy Section -->
+      <section id="academy" class="py-24 bg-cream relative overflow-hidden">
+        <div class="sparkles-container absolute inset-0 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col md:flex-row gap-16 items-center">
+          <div class="md:w-1/2 reveal-on-scroll" data-animation="fade-right">
+            <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">N Shine Academy</span>
+            <h2 class="text-4xl md:text-6xl font-serif mb-8">Empowering Future <span class="text-gold italic">Artists</span></h2>
+            <p class="text-lg text-plum-dark/70 mb-8">
+              Our academy offers a range of professional courses designed to take you from a beginner to a certified makeup artist. Learn the secrets of the industry from experts.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0">
+                  <span class="text-gold font-bold">01</span>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Professional Certification</h4>
+                  <p class="text-sm text-plum-dark/60">Recognized certificates to kickstart your career.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0">
+                  <span class="text-gold font-bold">02</span>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Live Model Practice</h4>
+                  <p class="text-sm text-plum-dark/60">Gain confidence with real-world hands-on training.</p>
+                </div>
+              </div>
+            </div>
+            <button class="mt-12 px-10 py-4 bg-plum text-white uppercase tracking-widest text-sm font-bold rounded-full hover:bg-pink transition-all duration-500 shadow-xl">Enquire Now</button>
+          </div>
+          <div class="md:w-1/2 reveal-on-scroll" data-animation="fade-left">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80" alt="Academy Training" class="rounded-full shadow-2xl border-8 border-white" referrerPolicy="no-referrer">
+              <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-gold rounded-full flex items-center justify-center text-center p-6 text-plum-dark font-serif text-xl animate-pulse">
+                New Batch Starting Soon!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shop Section -->
+      <section id="shop" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+          <div class="text-center mb-20 reveal-on-scroll">
+            <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Collection</span>
+            <h2 class="text-4xl md:text-6xl font-serif">Exclusive Makeup <span class="text-gold italic">Products</span></h2>
+            <p class="mt-6 text-plum-dark/60 max-w-2xl mx-auto">Discover our curated selection of professional-grade makeup kits and individual products used by our experts.</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-12">
+            <!-- Product 1 -->
+            <div class="group reveal-on-scroll" data-delay="0">
+              <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-6 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Professional Bridal Kit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
+                <div class="absolute top-4 right-4 bg-pink text-white text-xs font-bold px-4 py-2 rounded-full shadow-md">Best Seller</div>
+              </div>
+              <h3 class="text-2xl font-serif mb-2">Professional Bridal Kit</h3>
+              <p class="text-sm text-plum-dark/50 mb-4">Complete set for professional bridal transformations.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold text-plum">₹12,499</span>
+                <button class="px-6 py-2 bg-plum-dark text-white rounded-full text-xs uppercase tracking-widest font-bold hover:bg-pink transition-colors">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="group reveal-on-scroll" data-delay="150">
+              <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-6 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Luxury Eye Palette" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="text-2xl font-serif mb-2">Luxury Eye Palette</h3>
+              <p class="text-sm text-plum-dark/50 mb-4">Highly pigmented 24-color professional eyeshadow palette.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold text-plum">₹3,299</span>
+                <button class="px-6 py-2 bg-plum-dark text-white rounded-full text-xs uppercase tracking-widest font-bold hover:bg-pink transition-colors">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="group reveal-on-scroll" data-delay="300">
+              <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-6 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" alt="Pro Brush Set" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="text-2xl font-serif mb-2">Pro Brush Set</h3>
+              <p class="text-sm text-plum-dark/50 mb-4">12-piece premium synthetic brush set with leather case.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xl font-bold text-plum">₹4,999</span>
+                <button class="px-6 py-2 bg-plum-dark text-white rounded-full text-xs uppercase tracking-widest font-bold hover:bg-pink transition-colors">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-20 text-center">
+            <a href="#contact" class="inline-block px-12 py-5 border-2 border-plum text-plum uppercase tracking-widest text-sm font-bold rounded-full hover:bg-plum hover:text-white transition-all duration-500">
+              View All Products
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="py-24 px-8 md:px-16 bg-white">
+        <div class="text-center mb-20 reveal-on-scroll">
+          <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Our Portfolio</span>
+          <h2 class="text-4xl md:text-6xl font-serif">The Art of Transformation</h2>
+        </div>
+
+        <div class="masonry-gallery">
+          <div class="gallery-item reveal-on-scroll" data-delay="0">
+            <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=600&q=80" alt="Bridal Makeup" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Luxury Bridal</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Royal Glamour</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="100">
+            <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" alt="Traditional Indian Bride" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Traditional</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Heritage Glow</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="200">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Professional Makeup Artistry" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Pro Artistry</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Precision Tools</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="300">
+            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" alt="Eye Makeup Detail" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Detailing</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Ethereal Eyes</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="400">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80" alt="Wedding Jewelry and Makeup" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Reception</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Evening Radiance</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="500">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Salon Interior" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Our Studio</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Luxury Space</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="600">
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Bridal Glow" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Artistry</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Bridal Glow</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="700">
+            <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=600&q=80" alt="Makeup Transformation" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Transformation</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Elegance Defined</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item reveal-on-scroll" data-delay="800">
+            <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=600&q=80" alt="Bridal Hair" referrerPolicy="no-referrer">
+            <div class="gallery-overlay">
+              <div class="text-left">
+                <span class="text-pink-light text-[10px] uppercase tracking-widest font-bold block mb-1">Hairstyling</span>
+                <span class="text-white uppercase tracking-widest text-sm font-serif">Perfect Braids</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instagram Feed Section -->
+      <section class="py-12 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+          <div class="flex items-center justify-between mb-8">
+            <h3 class="text-2xl font-serif">Follow @nshine_bridal</h3>
+            <a href="#" class="text-pink font-bold text-sm uppercase tracking-widest border-b border-pink/20 hover:border-pink transition-all">View Instagram</a>
+          </div>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=400&h=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&h=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=400&h=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&h=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=400&h=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+            </div>
+            <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=400&h=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="py-24 bg-plum-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
+          <svg class="w-[800px] h-[800px] text-white animate-slow-spin" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21l-8.228-9.904A5.25 5.25 0 1118 5.25V5.25a5.25 5.25 0 01-6 15.75z"></path></svg>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+          <div class="testimonial-carousel relative h-80">
+            <div class="testimonial-slide active">
+              <div class="flex justify-center mb-6 space-x-1">
+                <span class="text-gold star">★</span><span class="text-gold star">★</span><span class="text-gold star">★</span><span class="text-gold star">★</span><span class="text-gold star">★</span>
+              </div>
+              <p class="text-2xl md:text-3xl font-serif italic mb-8">"N Shine made me feel like a queen on my wedding day. The makeup was flawless and stayed perfect throughout the night. Highly recommended!"</p>
+              <h5 class="text-pink font-bold uppercase tracking-widest">Priya S.</h5>
+              <span class="text-xs text-white/40">Thanjavur Bride</span>
+            </div>
+            <div class="testimonial-slide">
+              <div class="flex justify-center mb-6 space-x-1">
+                <span class="text-gold star">★</span><span class="text-gold star">★</span><span class="text-gold star">★</span><span class="text-gold star">★</span><span class="text-gold star">★</span>
+              </div>
+              <p class="text-2xl md:text-3xl font-serif italic mb-8">"The academy training was life-changing. I learned so much and now I'm starting my own freelance makeup business. Thank you N Shine!"</p>
+              <h5 class="text-pink font-bold uppercase tracking-widest">Ananya R.</h5>
+              <span class="text-xs text-white/40">Academy Graduate</span>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8 space-x-4">
+            <button id="prev-testimonial" class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">←</button>
+            <button id="next-testimonial" class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 transition-all">→</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-16">
+          <div class="reveal-on-scroll" data-animation="fade-right">
+            <span class="text-pink uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Get In Touch</span>
+            <h2 class="text-4xl md:text-6xl font-serif mb-8">Visit Our <span class="text-gold italic">Studio</span></h2>
+            
+            <div class="space-y-8">
+              <div class="flex items-start gap-6 group">
+                <div class="w-12 h-12 bg-plum text-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Our Location</h4>
+                  <p class="text-plum-dark/60">1st Floor, GMR Complex, Yagappa School Rd,<br>New Busstand, Thanjavur – 613005</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-6 group">
+                <div class="w-12 h-12 bg-plum text-white rounded-full flex items-center justify-center shrink-0 phone-icon">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Call Us</h4>
+                  <p class="text-plum-dark/60">63748 05996</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-6 group">
+                <div class="w-12 h-12 bg-plum text-white rounded-full flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Working Hours</h4>
+                  <p class="text-plum-dark/60">09:30 – 20:00 Daily</p>
+                  <div class="flex items-center gap-2 mt-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-bold text-green-600 uppercase">Open Now</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="reveal-on-scroll" data-animation="fade-left">
-          <div
-            class="mb-8 rounded-3xl overflow-hidden shadow-xl h-64 grayscale hover:grayscale-0 transition-all duration-700">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.234567890123!2d79.13234567890123!3d10.789012345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ3JzIwLjQiTiA3OcKwMDcnNTYuNCJF!5e0!3m2!1sen!2sin!4v1621234567890!5m2!1sen!2sin"
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <div class="reveal-on-scroll" data-animation="fade-left">
+            <div class="mb-8 rounded-3xl overflow-hidden shadow-xl h-64 grayscale hover:grayscale-0 transition-all duration-700">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.234567890123!2d79.13234567890123!3d10.789012345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ3JzIwLjQiTiA3OcKwMDcnNTYuNCJF!5e0!3m2!1sen!2sin!4v1621234567890!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <form id="contact-form" class="bg-white p-10 rounded-3xl shadow-xl space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Full Name</label>
+                  <input type="text" class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all" placeholder="Enter your name">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Phone Number</label>
+                  <input type="tel" class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all" placeholder="Enter your phone">
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Service Interested In</label>
+                <select class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all appearance-none">
+                  <option>Bridal Makeup</option>
+                  <option>Pro Artistry</option>
+                  <option>Academy Course</option>
+                  <option>Salon Service</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Message</label>
+                <textarea class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all h-32" placeholder="Tell us more..."></textarea>
+              </div>
+              <button type="submit" class="w-full py-5 bg-pink text-white uppercase tracking-widest font-bold rounded-xl hover:bg-plum transition-all duration-500 relative overflow-hidden group">
+                <span class="relative z-10">Send Message</span>
+                <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+              </button>
+            </form>
           </div>
-          <form id="contact-form" class="bg-white p-10 rounded-3xl shadow-xl space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Full Name</label>
-                <input type="text"
-                  class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all"
-                  placeholder="Enter your name">
-              </div>
-              <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Phone Number</label>
-                <input type="tel"
-                  class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all"
-                  placeholder="Enter your phone">
-              </div>
-            </div>
-            <div class="space-y-2">
-              <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Service Interested In</label>
-              <select
-                class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all appearance-none">
-                <option>Bridal Makeup</option>
-                <option>Pro Artistry</option>
-                <option>Academy Course</option>
-                <option>Salon Service</option>
-              </select>
-            </div>
-            <div class="space-y-2">
-              <label class="text-xs uppercase tracking-widest font-bold text-plum-dark/40">Message</label>
-              <textarea
-                class="w-full px-6 py-4 bg-cream/50 border-none rounded-xl focus:ring-2 focus:ring-pink outline-none transition-all h-32"
-                placeholder="Tell us more..."></textarea>
-            </div>
-            <button type="submit"
-              class="w-full py-5 bg-pink text-white uppercase tracking-widest font-bold rounded-xl hover:bg-plum transition-all duration-500 relative overflow-hidden group">
-              <span class="relative z-10">Send Message</span>
-              <div
-                class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-              </div>
-            </button>
-          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-plum-dark text-white py-16 px-8 md:px-16 overflow-hidden">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+        <div class="col-span-2">
+          <h2 class="text-3xl font-serif mb-6 tracking-widest">N SHINE</h2>
+          <p class="text-white/50 max-w-md leading-relaxed mb-8">
+            Thanjavur's most trusted bridal studio and academy. We believe in the power of beauty to transform lives and inspire confidence.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-pink hover:border-pink transition-all duration-300">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-pink hover:border-pink transition-all duration-300">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-gold font-serif text-xl mb-6">Quick Links</h4>
+          <ul class="space-y-4 text-white/50 text-sm">
+            <li><a href="#about" class="hover:text-pink transition-colors">About Us</a></li>
+            <li><a href="#services" class="hover:text-pink transition-colors">Services</a></li>
+            <li><a href="#academy" class="hover:text-pink transition-colors">Academy</a></li>
+            <li><a href="#gallery" class="hover:text-pink transition-colors">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-gold font-serif text-xl mb-6">Contact</h4>
+          <ul class="space-y-4 text-white/50 text-sm">
+            <li>Thanjavur, Tamil Nadu</li>
+            <li>63748 05996</li>
+            <li>nshinebridal@gmail.com</li>
+          </ul>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="mt-16 pt-8 border-t border-white/5 text-center text-white/30 text-xs uppercase tracking-[0.2em]">
+        &copy; 2026 N Shine Bridal Studio & Academy. All Rights Reserved.
+      </div>
+    </footer>
 
-  <footer class="bg-plum-dark text-white py-16 px-8 md:px-16 overflow-hidden">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
-      <div class="col-span-2">
-        <h2 class="text-3xl font-serif mb-6 tracking-widest">N SHINE</h2>
-        <p class="text-white/50 max-w-md leading-relaxed mb-8">
-          Thanjavur's most trusted bridal studio and academy. We believe in the power of beauty to transform lives and
-          inspire confidence.
-        </p>
-        <div class="flex space-x-6">
-          <a href="#"
-            class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-pink hover:border-pink transition-all duration-300">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
-          <a href="#"
-            class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-pink hover:border-pink transition-all duration-300">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-gold font-serif text-xl mb-6">Quick Links</h4>
-        <ul class="space-y-4 text-white/50 text-sm">
-          <li><a href="#about" class="hover:text-pink transition-colors">About Us</a></li>
-          <li><a href="#services" class="hover:text-pink transition-colors">Services</a></li>
-          <li><a href="#academy" class="hover:text-pink transition-colors">Academy</a></li>
-          <li><a href="#gallery" class="hover:text-pink transition-colors">Portfolio</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-gold font-serif text-xl mb-6">Contact</h4>
-        <ul class="space-y-4 text-white/50 text-sm">
-          <li>Thanjavur, Tamil Nadu</li>
-          <li>63748 05996</li>
-          <li>nshinebridal@gmail.com</li>
-        </ul>
-      </div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[10001] hidden flex items-center justify-center p-8">
+      <button id="close-lightbox" class="absolute top-8 right-8 text-white text-4xl">&times;</button>
+      <img id="lightbox-img" src="" alt="Lightbox" class="max-w-full max-h-full object-contain scale-90 transition-transform duration-500" referrerPolicy="no-referrer">
+      <button id="prev-img" class="absolute left-8 text-white text-4xl">‹</button>
+      <button id="next-img" class="absolute right-8 text-white text-4xl">›</button>
     </div>
-    <div class="mt-16 pt-8 border-t border-white/5 text-center text-white/30 text-xs uppercase tracking-[0.2em]">
-      &copy; 2026 N Shine Bridal Studio & Academy. All Rights Reserved.
-    </div>
-  </footer>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="fixed inset-0 bg-black/95 z-[10001] hidden flex items-center justify-center p-8">
-    <button id="close-lightbox" class="absolute top-8 right-8 text-white text-4xl">&times;</button>
-    <img id="lightbox-img" src="" alt="Lightbox"
-      class="max-w-full max-h-full object-contain scale-90 transition-transform duration-500"
-      referrerPolicy="no-referrer">
-    <button id="prev-img" class="absolute left-8 text-white text-4xl">‹</button>
-    <button id="next-img" class="absolute right-8 text-white text-4xl">›</button>
-  </div>
-
-</body>
-
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
